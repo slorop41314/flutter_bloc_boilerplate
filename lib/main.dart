@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flu_bloc_boilerplate/features/presentation/bloc/all_games/all_games_bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/routes/app_routes.dart';
-import 'package:flu_bloc_boilerplate/features/domain/repositories/games_repository.dart';
 import 'package:flu_bloc_boilerplate/features/domain/repositories/auth_repository.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/utils/app_theme.dart';
 import './injection_container.dart' as di;
@@ -26,17 +24,13 @@ class App extends StatelessWidget {
             repository: di.sl<AuthRepository>(),
           ),
         ),
-        BlocProvider<AllGamesBloc>(
-          create: (BuildContext context) => AllGamesBloc(
-            repository: di.sl<GamesRepository>(),
-          ),
-        ),
       ],
       child: MaterialApp(
         theme: appTheme(),
         debugShowCheckedModeBanner: false,
         initialRoute: AppRoutes.initial,
-        routes: AppRoutes.appRoutes,
+        // routes: AppRoutes.appRoutes,
+        onGenerateRoute: AppRoutes.onGenerateRoutes,
       ),
     );
   }

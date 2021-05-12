@@ -5,12 +5,6 @@ import 'package:flu_bloc_boilerplate/features/data/repositories/auth_repository_
 import 'package:flu_bloc_boilerplate/features/domain/repositories/auth_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:flu_bloc_boilerplate/core/network/api_provider.dart';
-import 'package:flu_bloc_boilerplate/features/data/datasources/games/games_local_data_source.dart';
-import 'package:flu_bloc_boilerplate/features/data/datasources/games/games_remote_data_source.dart';
-import 'package:flu_bloc_boilerplate/features/data/repositories/games_repository_impl.dart';
-import 'package:flu_bloc_boilerplate/features/domain/repositories/games_repository.dart';
-import 'package:flu_bloc_boilerplate/features/presentation/bloc/all_games/all_games_bloc.dart';
-import 'package:flu_bloc_boilerplate/features/presentation/bloc/all_games/bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,17 +21,8 @@ Future<void> init() async {
       repository: sl(),
     ),
   );
-  sl.registerFactory(
-    () => AllGamesBloc(repository: sl()),
-  );
 
   // Repository
-  sl.registerLazySingleton<GamesRepository>(
-    () => GamesRepositoryImpl(
-      remoteDataSource: sl(),
-      localDataSource: sl(),
-    ),
-  );
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(
       remoteDataSource: sl(),
@@ -47,14 +32,6 @@ Future<void> init() async {
   );
 
   // Data sources
-  sl.registerLazySingleton<GamesLocalDataSource>(
-    () => GamesLocalDataSourceImpl(),
-  );
-  sl.registerLazySingleton<GamesRemoteDataSource>(
-    () => GamesRemoteDataSourceImpl(
-      apiProvider: sl(),
-    ),
-  );
   sl.registerLazySingleton<AuthLocalDataSource>(
     () => AuthLocalDataSourceImpl(
       sharedPref: sl(),

@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_bloc.dart';
-import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_event.dart';
-import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_state.dart';
+import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/screens/auth/login_screen.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/screens/main/bottom_tab.dart';
 import 'package:flutter/material.dart';
