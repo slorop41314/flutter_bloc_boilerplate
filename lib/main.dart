@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
+import 'package:flu_bloc_boilerplate/features/presentation/utils/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_bloc.dart';
@@ -13,10 +14,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di
       .init(); //Inject all the dependencies and wait for it is done (i.e. UI won't built until all the dependencies are injected)
-  final String sentryKey =
-      "https://d46193ac336e42e3a1065fcabfbe8316@o535192.ingest.sentry.io/5761573";
+
   await SentryFlutter.init(
-    (options) => options.dsn = sentryKey,
+    (options) => options.dsn = sentryDsnKey,
     appRunner: () => runApp(App()),
   );
 }
