@@ -69,7 +69,8 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 12,
         ),
         CustomInput(
-          label: "Kata laluan",
+          label: "Password",
+          secureText: true,
         ),
         SizedBox(
           height: 24,
