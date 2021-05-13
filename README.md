@@ -4,13 +4,15 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+#This project is a flutter clean architecrute boilerplate with:
+- Firebase, analytics
+- Sentry
+- BLOC
+- Dio
+- Get it
 
-A few resources to get you started if this is your first Flutter project:
+# For new project: 
+1. Create new sentry project and change the dns key in app_config.dart
+2. Create and replace google-services.json and GoogleService-info.plist from your own firebase project.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
