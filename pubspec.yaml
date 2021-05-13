@@ -40,6 +40,8 @@ dependencies:
   sentry_flutter: ^5.0.0
   firebase_core: ^1.1.1
   firebase_analytics: ^8.0.4
+  permission_handler: ^7.1.0
+  shimmer_animation: ^2.0.0
 
   flutter_localizations:
     sdk: flutter
