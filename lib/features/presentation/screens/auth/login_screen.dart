@@ -78,9 +78,9 @@ class _LoginScreenState extends State<LoginScreen> {
           label: "LOGIN",
           onPressed: () {
             // HapticFeedback.lightImpact();
-            // Navigator.of(context).pushReplacementNamed(
-            //   BottomTab.route_name,
-            // );
+            Navigator.of(context).pushReplacementNamed(
+              BottomTab.route_name,
+            );
           },
         )
       ],

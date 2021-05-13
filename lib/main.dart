@@ -1,3 +1,5 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_bloc.dart';
@@ -19,8 +21,14 @@ void main() async {
   );
 }
 
-class App extends StatelessWidget {
-  // This widget is the root of the application.
+class App extends StatefulWidget {
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  FirebaseAnalytics analytics = FirebaseAnalytics();
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -33,6 +41,9 @@ class App extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: appTheme(),
+        navigatorObservers: [
+          FirebaseAnalyticsObserver(analytics: analytics),
+        ],
         debugShowCheckedModeBanner: false,
         initialRoute: AppRoutes.initial,
         // routes: AppRoutes.appRoutes,

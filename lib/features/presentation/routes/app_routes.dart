@@ -40,7 +40,7 @@ class AppRoutes {
     //   return page;
     // });
     // Custom transition, if want to use default, uncomment above line
-    return _slideUpRoute(page);
+    return _slideRightRoute(page);
   }
 
   static PageRouteBuilder _slideUpRoute(Widget page) {
@@ -63,10 +63,29 @@ class AppRoutes {
     );
   }
 
+  static PageRouteBuilder _slideRightRoute(Widget page) {
+    return PageRouteBuilder(
+      pageBuilder: (_, __, ___) => page,
+      transitionDuration: Duration(milliseconds: 300),
+      transitionsBuilder: (
+        BuildContext context,
+        Animation<double> animation,
+        Animation<double> secondaryAnimation,
+        Widget child,
+      ) =>
+          SlideTransition(
+        position: Tween<Offset>(
+          begin: const Offset(1, 0),
+          end: Offset.zero,
+        ).animate(animation),
+        child: child,
+      ),
+    );
+  }
+
   static PageRouteBuilder _fadeInRoute(Widget page) {
     return PageRouteBuilder(
       pageBuilder: (_, __, ___) => page,
-      // transitionDuration: Duration(milliseconds: 300),
       transitionsBuilder: (
         BuildContext context,
         Animation<double> animation,
