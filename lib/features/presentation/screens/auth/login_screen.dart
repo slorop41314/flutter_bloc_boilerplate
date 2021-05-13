@@ -3,6 +3,7 @@ import 'package:flu_bloc_boilerplate/features/presentation/components/shared/sha
 import 'package:flu_bloc_boilerplate/features/presentation/components/widgets/app_logo.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/screens/main/bottom_tab.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/utils/common.dart';
+import 'package:flutter/services.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -76,9 +77,10 @@ class _LoginScreenState extends State<LoginScreen> {
         CustomButton(
           label: "LOGIN",
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed(
-              BottomTab.route_name,
-            );
+            // HapticFeedback.lightImpact();
+            // Navigator.of(context).pushReplacementNamed(
+            //   BottomTab.route_name,
+            // );
           },
         )
       ],
