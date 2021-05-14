@@ -1,6 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
-import 'package:flu_bloc_boilerplate/features/presentation/utils/app_config.dart';
+import 'package:flu_bloc_boilerplate/core/utils/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/bloc/authentication/authentication_bloc.dart';

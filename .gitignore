@@ -31,6 +31,10 @@
 .pub/
 /build/
 
+# App config
+
+/lib/core/utils/app_config.dart
+
 # Web related
 lib/generated_plugin_registrant.dart
 
