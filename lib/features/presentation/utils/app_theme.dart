@@ -6,9 +6,15 @@ ThemeData appTheme() {
   return ThemeData(
     fontFamily: GoogleFonts.rubik().toString(),
     appBarTheme: AppBarTheme(
-      color: Colors.white,
+      // color: Colors.black,
       elevation: 1,
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
     ),
+    // iconTheme: IconThemeData(
+    //   color: Colors.black,
+    // ),
     primaryColor: kColorPrimary,
     accentColor: kColorPrimary,
     hintColor: Color(0xffcdd3e0),

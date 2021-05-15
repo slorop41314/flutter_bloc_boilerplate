@@ -1,3 +1,4 @@
+import 'package:flu_bloc_boilerplate/features/presentation/screens/main/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/screens/main/home_screen.dart';
 import 'package:flu_bloc_boilerplate/features/presentation/utils/app_color.dart';
@@ -15,7 +16,7 @@ class _BottomTabState extends State<BottomTab> {
     HomeScreen(),
     SizedBox(),
     SizedBox(),
-    SizedBox(),
+    SettingScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -49,16 +50,16 @@ class _BottomTabState extends State<BottomTab> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notes_outlined),
-            label: 'Diary',
+            icon: Icon(Icons.search_outlined),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat_bubble_outline),
             label: 'Message',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.comment_outlined),
-            label: 'Feedback',
+            icon: Icon(Icons.settings_outlined),
+            label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex,

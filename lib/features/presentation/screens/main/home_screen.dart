@@ -1,3 +1,4 @@
+import 'package:flu_bloc_boilerplate/features/presentation/components/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,9 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Bloc Example"),
-      ),
+      appBar: CustomAppBar("Home"),
       body: SafeArea(
         child: Container(
           child: SizedBox(),

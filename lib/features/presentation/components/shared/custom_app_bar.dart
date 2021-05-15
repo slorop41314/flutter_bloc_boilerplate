@@ -22,8 +22,8 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         title.toUpperCase(),
         style: headerTextStyle,
       ),
-      centerTitle: true,
-      backgroundColor: Colors.blue,
+      // centerTitle: true,
+      backgroundColor: Colors.white,
       leading: leading,
       actions: trailing,
     );
